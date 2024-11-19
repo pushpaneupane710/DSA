@@ -1,0 +1,129 @@
+
+Linear search:
+
+we are given a specific list or an array which contain few numbers of elements.
+note: unsorted list or array. 
+lst=     [10,23,45,70,11]
+with index 0,1,2,3,4
+
+we are also given a target value.
+we have to find the index of target value as an output.
+at which index target value is present?
+if target value is not present in the list or in array, then return -1.
+it takes only one element at one time to compare.
+#if we have repeated elements in the array or list, then it returns the first occurance index of the target value (first time at which index the target value is occuring), 
+# else return -1 (-1 meaning target value didnot matches with the element in the list or array)
+
+write a loop and go through each element one by one, compare each value of list or array with target value. 
+if target value is find:
+    return the index of the target
+else:
+    return -1 
+
+CODE for linear search:
+
+def linear_search(my_list,target_value):
+    size=len(my_list)
+    for index in range(0, size):
+        if (my_list[index]==target_value):
+            return index
+        
+    return -1
+
+
+my_list=[10,23,45,70,11]
+target_value=70
+
+result=linear_search(my_list,target_value)
+print(result)
+
+FOR PYTHON CODE VISUALIZATION: https://pythontutor.com/render.html#mode=display 
+
+Time Complexity:
+    Best Case: O(1), when the target element is the first element.
+    Worst Case: O(n), when the target element is at the end of the list or not present.
+
+Usage of linear search DS:
+    Small lists or arrays where a more complex search algorithm may not provide much benefit.
+    Unsorted data, where other searching algorithms (like binary search) would be ineffective without first sorting the list.
+
+summary: input---> list or array, target value
+        output-----> index of the target value
+conclude:
+    Linear search is simple, easy to implement, and works with any list, making it a versatile search method, especially for small or unsorted data structures.
+
+#####################################-------NEXT----------#####################################
+
+
+Binary search:
+
+binary search can only be applied on a sorted (ascending/descending order) array or list.
+Binary Search is much faster than Linear Search, but requires a sorted array or list to work.
+Binary Search algorithm searches the target value through an array or list and returns the index of the target value it searches for.
+
+
+code for binary search:
+
+def binary_search(my_list, target_value):
+    size=len(my_list)
+    print(f"size of my_list is: {size}")
+
+    start=0
+    end=size-1
+
+    while (start<=end):
+        mid=(start+end)//2 # Calculate the middle index
+
+        # Check if the middle element is the target
+        if (my_list[mid]==target_value):
+            return mid #found the target # Target found at index mid
+        # If the target is less than the middle element, search the left half
+        elif (my_list[mid]>target_value):
+            end=mid-1
+        # If the target is greater than the middle element, search the right half
+        elif (my_list[mid]<target_value):
+            start=mid+1
+            
+    # If the target is not found, return -1
+    return -1
+        
+my_list=[10,23,35,45,50,70,85]
+target_value=50
+
+index=binary_search(my_list, target_value)
+if index!=-1:
+    print(f"target value found in the list at index: {index}")
+else:
+    print("target value not found in the list")
+
+
+
+FOR PYTHON CODE VISUALIZATION: https://binary-search-visualization.netlify.app/
+
+Time Complexity:
+    Best Case: O(1) when the middle element is the target.
+    Average and Worst Case: O(logn) due to halving the search space each time.
+
+usage of binary search:
+    Large, sorted lists where the search time needs to be minimized.    
+    Situations where sorting is feasible if the list isn’t already sorted, and repeated searches will be performed on the data.s
+
+summary: input---> list or array, target value
+        output-----> index of the target value
+
+conclude:
+    Binary search is much faster than linear search for large lists due to the exponential reduction in search space with each step.
+
+#####################################-------NEXT----------#####################################
+
+selection sort:
+
+
+
+
+VISUALIZE SELECTION SORT: https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/visualize/ 
+
+
+#####################################-------NEXT----------#####################################
+
+Hash 
